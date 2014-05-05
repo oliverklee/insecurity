@@ -16,3 +16,16 @@ PHP web security. You could use in several ways:
 
 Never, ever put this project on any web server that is accessible from the
 internet. Your server will get hacked.
+
+## Installation
+
+Copy this project into the document root of some virtual host on your machine
+(either directly into the document root or in a subdirectory). Enable PHP
+and indexes for that virtual host.
+
+## License
+
+The application is licensed under the Gnu Public License (GPL) V3.
+
+The included Twitter Bootstrap and jQuery are licensed under the MIT License
+(MIT).
