@@ -12,16 +12,28 @@ PHP web security. You could use in several ways:
 * have the attendees search for vulnerabilities
 * have the attendees fix the vulnerabilities
 
+
 ## Warning
 
 Never, ever put this project on any web server that is accessible from the
 internet. Your server will get hacked.
+
 
 ## Installation
 
 Copy this project into the document root of some virtual host on your machine
 (either directly into the document root or in a subdirectory). Enable PHP
 and indexes for that virtual host.
+
+
+## Contributing
+
+Contributions in the form of bug fixes, more vulnerabilities or clean-up in the
+form of pull requests is always more than welcome.
+
+Please do not report any security vulnerabilities, and please do not submit pull
+requests with security fixes - you're missing the point.
+
 
 ## License
 
