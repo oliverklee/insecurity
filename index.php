@@ -10,6 +10,9 @@
 	<body>
 		<header>
 			<nav>
+<?php
+require_once 'includes/navigation.php'
+?>
 			</nav>
 		</header>
 
@@ -22,7 +25,7 @@ $pageToInclude = 'includes/' .  (!empty($_GET['page']) ? $_GET['page'] : 'home.p
 if (!is_file($pageToInclude)) {
 	throw new \InvalidArgumentException('Page not found:' . $pageToInclude);
 }
-require_once($pageToInclude);
+require_once $pageToInclude;
 ?>
 		</main>
 
