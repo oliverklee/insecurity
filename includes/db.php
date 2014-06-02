@@ -1,4 +1,8 @@
 <?php
+/**
+ * @return mysqli
+ * @throws InvalidArgumentException
+ */
 function getDatabaseConnection() {
 	static $isConnected = false;
 	static $connection = null;
