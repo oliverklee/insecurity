@@ -19,6 +19,8 @@ require_once 'includes/navigation.php'
 		<main>
 <?php
 require_once 'includes/db.php';
+require_once 'includes/logintools.php';
+startSession();
 
 $pageToInclude = 'includes/' .  (!empty($_GET['page']) ? $_GET['page'] : 'home.php');
 if (!is_file($pageToInclude)) {
