@@ -24,7 +24,7 @@
 
 <?php
 $databaseConnection = getDatabaseConnection();
-if ($_REQUEST['search_term']) {
+if (isset($_REQUEST['search_term']) && ($_REQUEST['search_term'] != '')) {
 	$searchTerm = $_REQUEST['search_term'];
 	$where = 'WHERE name LIKE "%' . $searchTerm . '%" OR email LIKE "%' . $searchTerm . '%"';
 } else {
