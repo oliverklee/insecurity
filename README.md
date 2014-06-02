@@ -28,6 +28,9 @@ and indexes for that virtual host.
 Then add a MySQL DB and a user for it with sufficient permissions and import
 the file db/users.sql into it.
 
+Copy configuration/db_template.json to configuration/db.json and fill in the
+DB connection data.
+
 
 ## Contributing
 

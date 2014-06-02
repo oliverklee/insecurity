@@ -21,3 +21,5 @@
 .webprj
 nbproject
 /log/
+
+configuration/db.json
