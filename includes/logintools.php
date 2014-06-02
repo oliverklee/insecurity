@@ -11,6 +11,29 @@ function startSession() {
 }
 
 /**
+ * @return bool
+ */
+function isLoggedIn() {
+	return isset($_SESSION['logged_in_user']);
+}
+
+/**
+ * @param int $id
+ *
+ * @return void
+ */
+function logInUser($id) {
+	$_SESSION['logged_in_user'] = $id;
+}
+
+/**
+ * @return void
+ */
+function logOutUser() {
+	unset($_SESSION['logged_in_user']);
+}
+
+/**
  * @return int
  */
 function getUserIdForLoginData() {
@@ -31,4 +54,22 @@ function getUserIdForLoginData() {
 	}
 
 	return $userId;
+}
+
+/**
+ * @param integer $id
+ *
+ * @return array
+ */
+function getUserDataForId($id) {
+	$where = 'WHERE id = ' . $id;
+	$databaseConnection = getDatabaseConnection();
+	$result = $databaseConnection->query('SELECT * FROM insecurity_users ' . $where);
+	if ($result->num_rows > 0) {
+		$userData = $result->fetch_assoc();
+	} else {
+		$userData = array();
+	}
+
+	return $userData;
 }
