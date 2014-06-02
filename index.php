@@ -13,7 +13,7 @@
 <?php
 require_once 'includes/db.php';
 require_once 'includes/logintools.php';
-startSession();
+checkLoginLogout();
 require_once 'includes/navigation.php'
 ?>
 			</nav>

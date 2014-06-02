@@ -2,16 +2,8 @@
 	<div class="container" style="width: 30em;">
 
 <?php
-
-if (!isLoggedIn()) {
-	$userId = getUserIdForLoginData();
-	if ($userId > 0) {
-		logInUser($userId);
-	}
-}
-
 if (isLoggedIn()) {
-	$userData = getUserDataForId($_SESSION['logged_in_user']);
+	$userData = getUserDataForId($_COOKIE['user_id']);
 	$userEmail = $userData['email'];
 ?>
 	<p>Sie sind eingeloggt als <strong><?= $userEmail ?></strong>.</p>

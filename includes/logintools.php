@@ -14,7 +14,20 @@ function startSession() {
  * @return bool
  */
 function isLoggedIn() {
-	return isset($_SESSION['logged_in_user']);
+	return isset($_SESSION['logged_in']);
+}
+
+/**
+ * @return void
+ */
+function checkLoginLogout() {
+	startSession();
+	if (!isLoggedIn()) {
+		$userId = getUserIdForLoginData();
+		if ($userId > 0) {
+			logInUser($userId);
+		}
+	}
 }
 
 /**
@@ -23,14 +36,17 @@ function isLoggedIn() {
  * @return void
  */
 function logInUser($id) {
-	$_SESSION['logged_in_user'] = $id;
+	$_SESSION['logged_in'] = true;
+	setcookie('user_id', $id);
+	$_COOKIE['user_id'] = $id;
 }
 
 /**
  * @return void
  */
 function logOutUser() {
-	unset($_SESSION['logged_in_user']);
+	unset($_SESSION['logged_in']);
+	setcookie('user_id', null);
 }
 
 /**
