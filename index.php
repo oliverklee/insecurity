@@ -15,6 +15,9 @@
 
 		<main>
 <?php
+require_once 'includes/db.php';
+getDatabaseConnection();
+
 $pageToInclude = 'includes/' .  (!empty($_GET['page']) ? $_GET['page'] : 'home.php');
 if (!is_file($pageToInclude)) {
 	throw new \InvalidArgumentException('Page not found:' . $pageToInclude);
