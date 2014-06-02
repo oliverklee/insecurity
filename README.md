@@ -25,6 +25,9 @@ Copy this project into the document root of some virtual host on your machine
 (either directly into the document root or in a subdirectory). Enable PHP
 and indexes for that virtual host.
 
+Then add a MySQL DB and a user for it with sufficient permissions and import
+the file db/users.sql into it.
+
 
 ## Contributing
 
