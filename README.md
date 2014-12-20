@@ -1,5 +1,7 @@
 # Insecurity
 
+[![Build Status](https://travis-ci.org/oliverklee/insecurity.svg?branch=master)](https://travis-ci.org/oliverklee/insecurity)
+
 ## What is this all about?
 
 This project is a web application that consists of a plethora of security
