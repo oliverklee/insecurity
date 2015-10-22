@@ -34,6 +34,19 @@ Copy configuration/db_template.json to configuration/db.json and fill in the
 DB connection data.
 
 
+## About me (Oliver Klee)
+
+I am a former member of the TYPO3 Security Team and the maintainer of the
+[PHPUnit TYPO3 extension](http://typo3.org/extensions/repository/view/phpunit),
+which is available in the TYPO3 extension repository (TER).
+
+You can book me for
+[workshops](https://www.oliverklee.de/workshops/workshops.html)
+at your company.
+
+I also frequently give workshops at the TYPO3 Developer Days.
+
+
 ## Contributing
 
 Contributions in the form of bug fixes, more vulnerabilities or clean-up in the
