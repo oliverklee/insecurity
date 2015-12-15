@@ -21,5 +21,6 @@
 .webprj
 nbproject
 /log/
+.vagrant
 
 configuration/db.json
