@@ -1,6 +1,6 @@
 {
-	"host": "localhost",
-	"name": "insecurity",
-	"username": "root",
-	"password": "root"
+  "host": "localhost",
+  "name": "insecurity",
+  "username": "root",
+  "password": "root"
 }
