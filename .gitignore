@@ -21,6 +21,7 @@
 .webprj
 nbproject
 /log/
-.vagrant
-
+/.vagrant
+/.otto
+/.ottoid
 configuration/db.json
