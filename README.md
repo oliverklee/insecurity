@@ -23,15 +23,12 @@ internet. Your server will get hacked.
 
 ## Installation
 
-Copy this project into the document root of some virtual host on your machine
-(either directly into the document root or in a subdirectory). Enable PHP
-and indexes for that virtual host.
-
-Then add a MySQL DB and a user for it with sufficient permissions and import
-the file db/users.sql into it.
-
-Copy configuration/db_template.json to configuration/db.json and fill in the
-DB connection data.
+1. Install [Vagrant](https://www.vagrantup.com/) and run `vagrant up` .
+2. `vagrant ssh`
+3. `sh /var/www/public/db/setup-database.sh`
+4. Log out from the virtual box.
+5. You now can access your insecure site at [http://192.168.33.10/](http://192.168.33.10/).
+6. You can log in as either `admin@example.com / 12345678` or as `user@example.com / asdfqwer` .  
 
 
 ## About me (Oliver Klee)

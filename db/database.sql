@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS insecurity;
+
+CREATE DATABASE insecurity CHARACTER SET utf8 COLLATE utf8_general_ci;
