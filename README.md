@@ -31,6 +31,13 @@ internet. Your server will get hacked.
 6. You can log in as either `admin@example.com / 12345678` or as `user@example.com / asdfqwer` .  
 
 
+## List of vulnerabilities
+
+There is a list of vulnerabilities in the file `Vulnerabilities.md` in the
+branch `solutions` (to keep you from seeing the solutions by accident before
+you have had the chance to find the vulnerabilities yourself).
+
+
 ## About me (Oliver Klee)
 
 I am a former member of the TYPO3 Security Team and the maintainer of the
