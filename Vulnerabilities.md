@@ -51,3 +51,26 @@ This list is categorized by the
 
 
 ## Unvalidated Redirects and Forwards
+
+
+
+
+
+Einlogge, ohne Password oder Benutzer zu kennen SQL Injection, in URL: password=x" OR 1=1 (enkodiert)
+JSON-Datei auslesen: http://192.168.33.10/configuration/db.json
+DB-User ist root
+User-ID in Cookie ändern
+== -Vergleich bei Passwort
+XSS im Login-Formular
+XSS im Suchformular
+SQLi bei User-ID im Cookie
+Information Disclosure (Path) bei Fehlermeldungen
+
+SQL-User ist Root
+Passwörter nicht gehasht
+Passwörter nicht gesaltet
+
+ToDo: Root-User-Passwort = SSH-Passwort
+persistentes XSS in Userliste
+
+Request-URI im Form-Tag

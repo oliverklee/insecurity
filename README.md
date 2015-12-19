@@ -66,7 +66,7 @@ steps:
 ## List of vulnerabilities
 
 There is a list of vulnerabilities in the file
-`Vulnerabilities.md` in the branch `solutions` (to keep
+[Vulnerabilities.md](Vulnerabilities.md) (to keep
 you from seeing the solutions by accident before you have had the chance to
 find the vulnerabilities yourself).
 
