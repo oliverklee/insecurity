@@ -1,17 +1,34 @@
-<ul class="nav nav-tabs">
-    <li><a href="index.php">Home</a></li>
-    <li><a href="index.php?page=userlist.php">Users</a></li>
-    <li role="separator" class="divider"></li>
-    <?php
-    if (isLoggedIn()) {
-        ?>
-        <li><a href="index.php?page=logout.php">Logout</a></li>
-        <?php
-    } else {
-        ?>
-        <li><a href="index.php?page=login.php">Login</a></li>
-
-        <?php
-    }
-    ?>
-</ul>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="index.php?page=userlist.php">Users</a></li>
+            </ul>
+            <?php
+            if (isLoggedIn()) {
+                $userData = getUserDataForId($_COOKIE['user_id']);
+                $userEmail = $userData['email'];
+                ?>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.php?page=logout.php">Logout</a>
+                    </li>
+                </ul>
+                <p class="nav navbar-text navbar-right">
+                    Logged in as <b><?= $userEmail ?></b>
+                </p>
+                <?php
+            } else {
+                ?>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.php?page=login.php">Login</a>
+                    </li>
+                </ul>
+                <?php
+            }
+            ?>
+        </div>
+    </div>
+</nav>
