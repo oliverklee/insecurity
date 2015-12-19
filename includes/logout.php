@@ -1,6 +1,3 @@
-<?php
-logoutUser();
-?>
 <div class="jumbotron">
     <div class="container">
         <p>
