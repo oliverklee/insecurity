@@ -4,7 +4,7 @@ logoutUser();
 <div class="jumbotron">
     <div class="container">
         <p>
-            Sie sind jetzt ausgeloggt.
+            You are now logged out.
         </p>
     </div>
 </div>

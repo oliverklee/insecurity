@@ -6,7 +6,7 @@
             $userData = getUserDataForId($_COOKIE['user_id']);
             $userEmail = $userData['email'];
             ?>
-            <p>Sie sind eingeloggt als <strong><?= $userEmail ?></strong>.</p>
+            <p>You are now logged in as <strong><?= $userEmail ?></strong>.</p>
             <?php
 
         } else {
