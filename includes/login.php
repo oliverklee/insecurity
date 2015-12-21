@@ -8,7 +8,6 @@
             ?>
             <p>You are now logged in as <strong><?= $userEmail ?></strong>.</p>
             <?php
-
         } else {
             $email = isset($_REQUEST['email']) ? $_REQUEST['email'] : '';
             $password = isset($_REQUEST['password']) ? $_REQUEST['password'] : '';
@@ -23,7 +22,6 @@
             </form>
 
             <?php
-
         }
         ?>
     </div>
