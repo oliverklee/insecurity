@@ -10,6 +10,7 @@
 <body>
 <header>
     <?php
+    require_once '../vendor/autoload.php';
     require_once '../includes/db.php';
     require_once '../includes/logintools.php';
     checkLoginLogout();
