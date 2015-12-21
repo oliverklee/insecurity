@@ -83,7 +83,8 @@ class DatabaseService
      *
      * @return void
      */
-    public function disconnect() {
+    public function disconnect()
+    {
         if (!$this->isConnected()) {
             return;
         }
@@ -114,8 +115,10 @@ class DatabaseService
         $absoluteConfigurationPath = $this->getApplicationRoot() . self::CONFIGURATION_PATH;
         $configurationAsJson = file_get_contents($absoluteConfigurationPath);
         if ($configurationAsJson === false) {
-            throw new \UnexpectedValueException('Configuration file could not be read: ' . $absoluteConfigurationPath,
-                1450711920);
+            throw new \UnexpectedValueException(
+                'Configuration file could not be read: ' . $absoluteConfigurationPath,
+                1450711920
+            );
         }
 
         return json_decode($configurationAsJson, true);

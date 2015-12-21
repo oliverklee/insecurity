@@ -14,5 +14,7 @@ before_script:
 script:
   # Run PHP lint on all PHP files.
   - find Classes/ includes/ public/ Tests/ -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
+  # Check the coding style.
+  - vendor/bin/phpcs --standard=Configuration/PhpCodeSniffer/Standards/Insecurity/ Classes/ Tests/
   # Run the tests.
   - vendor/bin/phpunit Tests/
