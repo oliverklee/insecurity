@@ -9,7 +9,7 @@ function getDatabaseConnection()
     static $isConnected = false;
     static $connection = null;
     if (!$isConnected) {
-        $configurationAsJson = file_get_contents('../configuration/db.json');
+        $configurationAsJson = file_get_contents('../Configuration/db.json');
         if (!$configurationAsJson) {
             throw new \InvalidArgumentException('Configuration file could not be read.');
         }
