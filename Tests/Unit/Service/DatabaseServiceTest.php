@@ -11,6 +11,16 @@ use OliverKlee\Insecurity\Service\DatabaseService;
 class DatabaseServiceTest extends \PHPUnit_Framework_TestCase
 {
     /**
+     * Cleans up.
+     *
+     * @return void
+     */
+    protected function tearDown()
+    {
+        DatabaseService::purgeInstance();
+    }
+
+    /**
      * @test
      */
     public function getInstanceReturnsInstanceOfTestedClass()

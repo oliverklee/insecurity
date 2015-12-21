@@ -49,7 +49,7 @@ class DatabaseService
      *
      * @return void
      */
-    public function purgeInstance()
+    public static function purgeInstance()
     {
         self::$instance = null;
     }
