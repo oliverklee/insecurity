@@ -24,5 +24,5 @@ nbproject
 /.vagrant
 /.otto
 /.ottoid
-/.composer.lock
+/composer.lock
 /vendor/
