@@ -22,26 +22,27 @@
             </tr>
             </thead>
             <tbody>
-
             <?php
-            $databaseConnection = getDatabaseConnection();
+            use OliverKlee\Insecurity\Service\DatabaseService;
+
             if (isset($_REQUEST['search_term']) && ($_REQUEST['search_term'] != '')) {
                 $searchTerm = $_REQUEST['search_term'];
-                $where = 'WHERE name LIKE "%'.$searchTerm.'%" OR email LIKE "%'.$searchTerm.'%"';
+                $where = "name LIKE \"%$searchTerm%\" OR email LIKE \"%$searchTerm%\"";
             } else {
-                $where = '';
+                $where = '1 = 1';
             }
-            $result = $databaseConnection->query('SELECT * FROM insecurity_users '.$where);
+            $databaseService = DatabaseService::getInstance();
+            $databaseService->connect();
+            $users = $databaseService->select('insecurity_users ', $where);
 
             /** @var $user string[] */
-            while (($user = $result->fetch_assoc())) {
+            foreach ($users as $user) {
                 ?>
                 <tr>
                     <td><?= $user['name'] ?></td>
                     <td><?= $user['email'] ?></td>
                 </tr>
                 <?php
-
             }
             ?>
             </tbody>

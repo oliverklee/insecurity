@@ -1,4 +1,6 @@
 <?php
+use OliverKlee\Insecurity\Service\DatabaseService;
+
 /**
  * Initializes the login/logout process and logs users in or out if requested.
  *
@@ -45,7 +47,7 @@ function processNewLoginIfProvided()
 /**
  * Returns the User ID for the login data provided in the request.
  *
- * @return int the user ID for login or 0 if there is non
+ * @return int the user ID for login or 0 if there is none
  */
 function getUserIdForLoginData()
 {
@@ -55,15 +57,11 @@ function getUserIdForLoginData()
         return 0;
     }
 
-    $where = 'WHERE email = "' . $email . '" AND password = "' . $password . '"';
-    $databaseConnection = getDatabaseConnection();
-    $result = $databaseConnection->query('SELECT * FROM insecurity_users ' . $where);
-    if ($result->num_rows > 0) {
-        $userData = $result->fetch_assoc();
-        $userId = (int)$userData['id'];
-    } else {
-        $userId = 0;
-    }
+    $databaseService = DatabaseService::getInstance();
+    $databaseService->connect();
+    $where = "email = \"$email\" AND password = \"$password\"";
+    $queryResult = $databaseService->select('insecurity_users', $where);
+    $userId = !empty($queryResult) ? $queryResult[0]['id'] : 0;
 
     return $userId;
 }
@@ -112,14 +110,11 @@ function isLoggedIn()
  */
 function getUserDataForId($id)
 {
-    $where = 'WHERE id = ' . $id;
-    $databaseConnection = getDatabaseConnection();
-    $result = $databaseConnection->query('SELECT * FROM insecurity_users ' . $where);
-    if ($result->num_rows > 0) {
-        $userData = $result->fetch_assoc();
-    } else {
-        $userData = array();
-    }
+    $databaseService = DatabaseService::getInstance();
+    $databaseService->connect();
+    $where = "id = $id";
+    $queryResult = $databaseService->select('insecurity_users', $where);
+    $userData = !empty($queryResult) ? $queryResult[0] : [];
 
     return $userData;
 }

@@ -8,6 +8,11 @@ php:
   - 7.0
   - hhvm
 
+before_script:
+  - composer install
+
 script:
   # Run PHP lint on all PHP files.
-  - find Classes/ includes/ public/ -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
+  - find Classes/ includes/ public/ Tests/ -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
+  # Run the tests.
+  - vendor/bin/phpunit Tests/
