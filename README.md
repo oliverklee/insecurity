@@ -25,7 +25,7 @@ internet. Your server will get hacked.
 
 1. Install [Vagrant](https://www.vagrantup.com/) and run `vagrant up` .
 2. `vagrant ssh`
-3. `sh /var/www/public/db/setup-database.sh`
+3. `sh /var/www/db/setup-database.sh`
 4. Log out from the virtual box.
 5. You now can access your insecure site at [http://192.168.33.10/](http://192.168.33.10/).
 6. You can log in as either `admin@example.com / 12345678` or as `user@example.com / asdfqwer` .  

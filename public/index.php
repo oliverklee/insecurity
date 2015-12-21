@@ -10,17 +10,17 @@
 <body>
 <header>
     <?php
-    require_once 'includes/db.php';
-    require_once 'includes/logintools.php';
+    require_once '../includes/db.php';
+    require_once '../includes/logintools.php';
     checkLoginLogout();
-    require_once 'includes/navigation.php'
+    require_once '../includes/navigation.php'
     ?>
 </header>
 
 <main>
     <?php
 
-    $pageToInclude = 'includes/' . (!empty($_GET['page']) ? $_GET['page'] : 'home.php');
+    $pageToInclude = '../includes/' . (!empty($_GET['page']) ? $_GET['page'] : 'home.php');
     if (!is_file($pageToInclude)) {
         throw new \InvalidArgumentException('Page not found:' . $pageToInclude);
     }
