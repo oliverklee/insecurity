@@ -32,7 +32,6 @@
                 $where = '1 = 1';
             }
             $databaseService = DatabaseService::getInstance();
-            $databaseService->connect();
             $users = $databaseService->select('insecurity_users ', $where);
 
             /** @var $user string[] */

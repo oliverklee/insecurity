@@ -58,7 +58,6 @@ function getUserIdForLoginData()
     }
 
     $databaseService = DatabaseService::getInstance();
-    $databaseService->connect();
     $where = "email = \"$email\" AND password = \"$password\"";
     $queryResult = $databaseService->select('insecurity_users', $where);
     $userId = !empty($queryResult) ? $queryResult[0]['id'] : 0;
@@ -111,7 +110,6 @@ function isLoggedIn()
 function getUserDataForId($id)
 {
     $databaseService = DatabaseService::getInstance();
-    $databaseService->connect();
     $where = "id = $id";
     $queryResult = $databaseService->select('insecurity_users', $where);
     $userData = !empty($queryResult) ? $queryResult[0] : [];

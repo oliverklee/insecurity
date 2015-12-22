@@ -10,6 +10,8 @@
 <body>
 <header>
     <?php
+    require_once '../Classes/Core/Bootstrap.php';
+    \OliverKlee\Insecurity\Core\Bootstrap::bootstrap();
     require_once '../vendor/autoload.php';
     require_once '../includes/logintools.php';
     checkLoginLogout();
@@ -24,8 +26,6 @@
         throw new \InvalidArgumentException('Page not found:' . $pageToInclude);
     }
     require_once $pageToInclude;
-    \OliverKlee\Insecurity\Service\DatabaseService::getInstance()->disconnect();
-    \OliverKlee\Insecurity\Service\DatabaseService::purgeInstance();
     ?>
 </main>
 
@@ -35,3 +35,5 @@
 </footer>
 </body>
 </html>
+<?php
+\OliverKlee\Insecurity\Core\Bootstrap::shutDown();
