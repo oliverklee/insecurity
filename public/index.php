@@ -24,6 +24,8 @@
         throw new \InvalidArgumentException('Page not found:' . $pageToInclude);
     }
     require_once $pageToInclude;
+    \OliverKlee\Insecurity\Service\DatabaseService::getInstance()->disconnect();
+    \OliverKlee\Insecurity\Service\DatabaseService::purgeInstance();
     ?>
 </main>
 
