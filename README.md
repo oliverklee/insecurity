@@ -21,6 +21,24 @@ Never, ever put this project on any web server that is accessible from the
 internet. Your server will get hacked.
 
 
+## How to use this project for learning
+
+For learning as much as possible (e.g., at a workshop on web application
+security), I propose you do the exercises in the following order:
+
+1. Install the application and try to find as many vulnerabilities as possible
+   without reading the code and without using any automatic vulnerability
+   scanning tools. Just use the application front end (without logging in,
+   then with the `user` login and with the `admin` login). Use browser plugins
+   that help you manipulate the requests and read the web site source.
+
+2. Try to find more vulnerabilities by reading the code.
+
+3. Try to find more vulnerabilities by using automated vulnerablity scanners.
+
+4. Fix the vulnerabilities.
+
+
 ## Installation
 
 1. Install [Vagrant](https://www.vagrantup.com/) and run `vagrant up` .
