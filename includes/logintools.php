@@ -101,23 +101,6 @@ function isLoggedIn()
 }
 
 /**
- * Returns the user data for the user $id from the database.
- *
- * @param int $id the ID, must be > 0
- *
- * @return mixed[]
- */
-function getUserDataForId($id)
-{
-    $databaseService = DatabaseService::getInstance();
-    $where = "id = $id";
-    $queryResult = $databaseService->select('insecurity_users', $where);
-    $userData = !empty($queryResult) ? $queryResult[0] : [];
-
-    return $userData;
-}
-
-/**
  * Logs the user out if the page is "logout.php".
  *
  * @return void
@@ -139,4 +122,21 @@ function logOutUser()
     unset($_SESSION['logged_in']);
     $GLOBALS['logged_in'] = false;
     setcookie('user_id', null);
+}
+
+/**
+ * Gets the logged-in user (or null if no user is logged in).
+ *
+ * @return \OliverKlee\Insecurity\Domain\Model\User|null
+ */
+function getLoggedInUser()
+{
+    if (!isLoggedIn()) {
+        return null;
+    }
+
+    $userRepository = \OliverKlee\Insecurity\Domain\Repository\UserRepository::getInstance();
+    $userId = $_COOKIE['user_id'];
+
+    return $userRepository->findOneById($userId);
 }

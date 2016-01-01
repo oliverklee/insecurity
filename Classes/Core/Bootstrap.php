@@ -2,6 +2,7 @@
 namespace OliverKlee\Insecurity\Core;
 
 use OliverKlee\Insecurity\Service\DatabaseService;
+use OliverKlee\Insecurity\Domain\Repository\UserRepository;
 
 /**
  * This class bootstraps the application and shuts it down again.
@@ -39,6 +40,7 @@ final class Bootstrap
      */
     public static function shutDown()
     {
+        UserRepository::purgeInstance();
         DatabaseService::getInstance()->disconnect();
         DatabaseService::purgeInstance();
     }

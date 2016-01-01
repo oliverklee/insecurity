@@ -7,8 +7,8 @@
             </ul>
             <?php
             if (isLoggedIn()) {
-                $userData = getUserDataForId($_COOKIE['user_id']);
-                $userEmail = $userData['email'];
+                $user = getLoggedInUser();
+                $userEmail = $user->getEmail();
                 ?>
                 <ul class="nav navbar-nav navbar-right">
                     <li>

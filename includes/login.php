@@ -3,8 +3,8 @@
 
         <?php
         if (isLoggedIn()) {
-            $userData = getUserDataForId($_COOKIE['user_id']);
-            $userEmail = $userData['email'];
+            $user = getLoggedInUser();
+            $userEmail = $user->getEmail();
             ?>
             <p>You are now logged in as <strong><?= $userEmail ?></strong>.</p>
             <?php
