@@ -45,10 +45,22 @@ security), I propose you do the exercises in the following order:
 2. `vagrant ssh`
 3. `cd /var/www/`
 4. `composer install`
-5. `sh db/setup-database.sh`
-6. Log out from the virtual box.
-7. You now can access your insecure site at [http://192.168.33.10/](http://192.168.33.10/).
-8. You can log in as either `admin@example.com / 12345678` or as `user@example.com / asdfqwer` .  
+5. Log out from the virtual box.
+6. You now can access your insecure site at [http://192.168.33.10/](http://192.168.33.10/).
+7. You can log in as either `admin@example.com / 12345678` or as `user@example.com / asdfqwer` .  
+
+
+## Resetting the database
+
+The database and its contents are automatically created when you run
+`vagrant up`.
+
+If you ever need to rebuild the database from scratch, follow this list of
+steps:
+
+1. `vagrant ssh`
+2. `sh /var/www/db/setup-database.sh`
+3. Log out from the virtual box.
 
 
 ## List of vulnerabilities

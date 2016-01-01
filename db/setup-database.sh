@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SCRIPT_PATH=`dirname "$0"`;
+SCRIPT_PATH="/var/www/db";
 
 echo "Setting up database...";
 mysql --user=root --password=root < "${SCRIPT_PATH}/database.sql";
