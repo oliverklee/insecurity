@@ -35,9 +35,10 @@ internet. Your server will get hacked.
 
 ## List of vulnerabilities
 
-There is a list of vulnerabilities in the file `Vulnerabilities.md` in the
-branch `solutions` (to keep you from seeing the solutions by accident before
-you have had the chance to find the vulnerabilities yourself).
+There is a list of vulnerabilities in the file
+`Vulnerabilities.md` in the branch `solutions` (to keep
+you from seeing the solutions by accident before you have had the chance to
+find the vulnerabilities yourself).
 
 
 ## About me (Oliver Klee)
