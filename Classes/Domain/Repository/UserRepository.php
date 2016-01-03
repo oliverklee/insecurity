@@ -22,6 +22,11 @@ class UserRepository
     private $databaseService = null;
 
     /**
+     * @var string
+     */
+    private $tableName = 'insecurity_users';
+
+    /**
      * Private constructor (as this class is a Singleton).
      */
     private function __construct()
@@ -62,14 +67,41 @@ class UserRepository
      */
     public function findOneById($id)
     {
-        $where = "id = $id";
-        $queryResult = $this->databaseService->select('insecurity_users', $where);
+        return $this->findOneByWhereClause("id = $id");
+    }
+
+    /**
+     * Finds the User that matches the given login credentials
+     *
+     * @param string $email
+     * @param string $password
+     *
+     * @return User|null the matching User of null if there is none
+     */
+    public function findOneByLoginCredentials($email, $password)
+    {
+        if ($email == '' || $password == '') {
+            return null;
+        }
+
+        return $this->findOneByWhereClause("email = \"$email\" AND password = \"$password\"");
+    }
+
+    /**
+     * Finds one User by the given WHERE clause.
+     *
+     * @param string $whereClause
+     *
+     * @return User|null
+     */
+    private function findOneByWhereClause($whereClause)
+    {
+        $queryResult = $this->databaseService->select($this->tableName, $whereClause);
         if (empty($queryResult)) {
             return null;
         }
-        $userData = $queryResult[0];
 
-        return $this->buildModelFromRawData($userData);
+        return $this->buildModelFromRawData($queryResult[0]);
     }
 
     /**

@@ -38,46 +38,30 @@ function startSession()
  */
 function processNewLoginIfProvided()
 {
-    $userId = getUserIdForLoginData();
-    if ($userId > 0) {
-        logInUser($userId);
+    if (!isset($_REQUEST['email']) || !isset($_REQUEST['password'])) {
+        return;
+    }
+
+    $userRepository = \OliverKlee\Insecurity\Domain\Repository\UserRepository::getInstance();
+    $user = $userRepository->findOneByLoginCredentials($_REQUEST['email'], $_REQUEST['password']);
+    if ($user !== null) {
+        loginUser($user);
     }
 }
 
 /**
- * Returns the User ID for the login data provided in the request.
+ * Logs in $user.
  *
- * @return int the user ID for login or 0 if there is none
- */
-function getUserIdForLoginData()
-{
-    $email = isset($_REQUEST['email']) ? $_REQUEST['email'] : '';
-    $password = isset($_REQUEST['password']) ? $_REQUEST['password'] : '';
-    if ($email == '' || $password == '') {
-        return 0;
-    }
-
-    $databaseService = DatabaseService::getInstance();
-    $where = "email = \"$email\" AND password = \"$password\"";
-    $queryResult = $databaseService->select('insecurity_users', $where);
-    $userId = !empty($queryResult) ? $queryResult[0]['id'] : 0;
-
-    return $userId;
-}
-
-/**
- * Logs in the user with the ID $id.
- *
- * @param int $id the ID, must be > 0
+ * @param \OliverKlee\Insecurity\Domain\Model\User $user
  *
  * @return void
  */
-function logInUser($id)
+function logInUser($user)
 {
     $_SESSION['logged_in'] = true;
     $GLOBALS['logged_in'] = true;
-    setcookie('user_id', $id);
-    $_COOKIE['user_id'] = $id;
+    setcookie('user_id', $user->getId());
+    $_COOKIE['user_id'] = $user->getId();
 }
 
 /**
