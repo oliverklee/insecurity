@@ -1,5 +1,4 @@
 <?php
-use OliverKlee\Insecurity\Service\DatabaseService;
 
 /**
  * Initializes the login/logout process and logs users in or out if requested.
