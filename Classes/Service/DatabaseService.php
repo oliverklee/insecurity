@@ -146,10 +146,37 @@ class DatabaseService
      */
     public function select($table, $where)
     {
-        $query = "SELECT * FROM $table WHERE $where;";
-        $queryResult = $this->connection->query($query);
+        return $this->executeQuery("SELECT * FROM $table WHERE $where;");
+    }
+
+    /**
+     * Executes a SELECT query for all records in a table.
+     *
+     * @param string $table the name of the table to query, must not be empty
+     *
+     * @return mixed[][]
+     *
+     * @throws \RuntimeException
+     */
+    public function selectAll($table)
+    {
+        return $this->executeQuery("SELECT * FROM $table");
+    }
+
+    /**
+     * Executes a query.
+     *
+     * @param string $queryString the complete query string
+     *
+     * @return mixed[][]
+     *
+     * @throws \RuntimeException
+     */
+    private function executeQuery($queryString)
+    {
+        $queryResult = $this->connection->query($queryString);
         if ($queryResult === false) {
-            throw new \RuntimeException("SELECT \"$query\" failed: ");
+            throw new \RuntimeException("SELECT \"$queryString\" failed: ", 1451829441);
         }
 
         $resultRows = $queryResult->fetch_all(MYSQLI_ASSOC);

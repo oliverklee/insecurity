@@ -59,6 +59,18 @@ class UserRepository
     }
 
     /**
+     * Retrieves all Users.
+     *
+     * @return User[]
+     */
+    public function findAll()
+    {
+        $queryResult = $this->databaseService->selectAll($this->tableName);
+
+        return $this->buildMultipleModelsFromRawData($queryResult);
+    }
+
+    /**
      * Finds one User by ID.
      *
      * @param int $id
@@ -96,16 +108,54 @@ class UserRepository
      */
     private function findOneByWhereClause($whereClause)
     {
-        $queryResult = $this->databaseService->select($this->tableName, $whereClause);
-        if (empty($queryResult)) {
-            return null;
-        }
+        $models = $this->findByWhereClause($whereClause);
 
-        return $this->buildModelFromRawData($queryResult[0]);
+        return !empty($models) ? $models[0] : null;
     }
 
     /**
-     * Builds a User model rom the raw data from the DB.
+     * Retrieves the Users matching the given $searchTerm.
+     *
+     * @return User[]
+     */
+    public function findBySearchTerm($searchTerm)
+    {
+        return $this->findByWhereClause("name LIKE \"%$searchTerm%\" OR email LIKE \"%$searchTerm%\"");
+    }
+
+    /**
+     * Finds the Users by the given WHERE clause.
+     *
+     * @param string $whereClause
+     *
+     * @return User[]
+     */
+    private function findByWhereClause($whereClause)
+    {
+        $queryResult = $this->databaseService->select($this->tableName, $whereClause);
+
+        return $this->buildMultipleModelsFromRawData($queryResult);
+    }
+
+    /**
+     * Builds multiple User models from the raw data from the DB.
+     *
+     * @param mixed[][] $rawData the data for several model
+     *
+     * @return User[]
+     */
+    private function buildMultipleModelsFromRawData(array $rawData)
+    {
+        $models = [];
+        foreach ($rawData as $dataRow) {
+            $models[] = $this->buildModelFromRawData($dataRow);
+        }
+
+        return $models;
+    }
+
+    /**
+     * Builds a User model from the raw data from the DB.
      *
      * @param mixed[] $rawData the data for one model
      *

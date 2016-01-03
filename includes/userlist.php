@@ -23,23 +23,20 @@
             </thead>
             <tbody>
             <?php
-            use OliverKlee\Insecurity\Service\DatabaseService;
+            $userRepository = \OliverKlee\Insecurity\Domain\Repository\UserRepository::getInstance();
 
             if (isset($_REQUEST['search_term']) && ($_REQUEST['search_term'] != '')) {
-                $searchTerm = $_REQUEST['search_term'];
-                $where = "name LIKE \"%$searchTerm%\" OR email LIKE \"%$searchTerm%\"";
+                $users = $userRepository->findBySearchTerm($_REQUEST['search_term']);
             } else {
-                $where = '1 = 1';
+                $users = $userRepository->findAll();
             }
-            $databaseService = DatabaseService::getInstance();
-            $users = $databaseService->select('insecurity_users ', $where);
 
             /** @var $user string[] */
             foreach ($users as $user) {
                 ?>
                 <tr>
-                    <td><?= $user['name'] ?></td>
-                    <td><?= $user['email'] ?></td>
+                    <td><?= $user->getName() ?></td>
+                    <td><?= $user->getEmail() ?></td>
                 </tr>
                 <?php
             }
