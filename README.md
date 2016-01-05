@@ -34,9 +34,12 @@ security), I propose you do the exercises in the following order:
 
 2. Try to find more vulnerabilities by reading the code.
 
-3. Try to find more vulnerabilities by using automated vulnerablity scanners.
+3. Try to find more vulnerabilities by using automated vulnerability scanners.
 
-4. Fix the vulnerabilities.
+4. Compare the list of vulnerabilities you have found in the previous two steps
+   with the list available in the `solutions` branch.
+
+5. Fix the vulnerabilities.
 
 
 ## Installation
