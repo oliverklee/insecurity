@@ -39,6 +39,7 @@
                     <td><?= $user->getEmail() ?></td>
                 </tr>
                 <?php
+
             }
             ?>
             </tbody>

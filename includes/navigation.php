@@ -19,6 +19,7 @@
                     Logged in as <b><?= $userEmail ?></b>
                 </p>
                 <?php
+
             } else {
                 ?>
                 <ul class="nav navbar-nav navbar-right">
@@ -27,6 +28,7 @@
                     </li>
                 </ul>
                 <?php
+
             }
             ?>
         </div>

@@ -1,8 +1,8 @@
 <?php
 namespace OliverKlee\Insecurity\Core;
 
-use OliverKlee\Insecurity\Service\DatabaseService;
 use OliverKlee\Insecurity\Domain\Repository\UserRepository;
+use OliverKlee\Insecurity\Service\DatabaseService;
 
 /**
  * This class bootstraps the application and shuts it down again.
