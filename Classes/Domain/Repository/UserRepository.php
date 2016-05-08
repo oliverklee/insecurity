@@ -173,13 +173,13 @@ class UserRepository
 
             $previousValue = $model->$getterName();
             if (is_int($previousValue)) {
-                $typedNewValue = (int) $rawNewValue;
+                $typedNewValue = (int)$rawNewValue;
             } elseif (is_bool($previousValue)) {
-                $typedNewValue = (bool) $rawNewValue;
+                $typedNewValue = (bool)$rawNewValue;
             } elseif (is_float($previousValue)) {
-                $typedNewValue = (float) $rawNewValue;
+                $typedNewValue = (float)$rawNewValue;
             } else {
-                $typedNewValue = (string) $rawNewValue;
+                $typedNewValue = (string)$rawNewValue;
             }
 
             $setterName = "set$uppercasedPropertyKey";
