@@ -31,10 +31,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
      */
     public function getIdInitiallyReturnsZero()
     {
-        self::assertSame(
-            0,
-            $this->subject->getId()
-        );
+        self::assertSame(0, $this->subject->getId());
     }
 
     /**
@@ -42,12 +39,11 @@ class UserTest extends \PHPUnit_Framework_TestCase
      */
     public function setIdSetsId()
     {
-        $this->subject->setId(123456);
+        $id = 123456;
 
-        self::assertSame(
-            123456,
-            $this->subject->getId()
-        );
+        $this->subject->setId($id);
+
+        self::assertSame($id, $this->subject->getId());
     }
 
     /**
@@ -55,10 +51,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
      */
     public function getNameInitiallyReturnsEmptyString()
     {
-        self::assertSame(
-            '',
-            $this->subject->getName()
-        );
+        self::assertSame('', $this->subject->getName());
     }
 
     /**
@@ -66,12 +59,11 @@ class UserTest extends \PHPUnit_Framework_TestCase
      */
     public function setNameSetsName()
     {
-        $this->subject->setName('foo bar');
+        $name = 'foo bar';
 
-        self::assertSame(
-            'foo bar',
-            $this->subject->getName()
-        );
+        $this->subject->setName($name);
+
+        self::assertSame($name, $this->subject->getName());
     }
 
     /**
@@ -79,10 +71,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
      */
     public function getEmailInitiallyReturnsEmptyString()
     {
-        self::assertSame(
-            '',
-            $this->subject->getEmail()
-        );
+        self::assertSame('', $this->subject->getEmail());
     }
 
     /**
@@ -90,12 +79,11 @@ class UserTest extends \PHPUnit_Framework_TestCase
      */
     public function setEmailSetsEmail()
     {
-        $this->subject->setEmail('foo bar');
+        $email = 'jane@example.com';
 
-        self::assertSame(
-            'foo bar',
-            $this->subject->getEmail()
-        );
+        $this->subject->setEmail($email);
+
+        self::assertSame($email, $this->subject->getEmail());
     }
 
     /**
@@ -103,10 +91,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
      */
     public function getPasswordInitiallyReturnsEmptyString()
     {
-        self::assertSame(
-            '',
-            $this->subject->getPassword()
-        );
+        self::assertSame('', $this->subject->getPassword());
     }
 
     /**
@@ -114,12 +99,11 @@ class UserTest extends \PHPUnit_Framework_TestCase
      */
     public function setPasswordSetsPassword()
     {
-        $this->subject->setPassword('foo bar');
+        $password = 'nöiouqv3tw4';
 
-        self::assertSame(
-            'foo bar',
-            $this->subject->getPassword()
-        );
+        $this->subject->setPassword($password);
+
+        self::assertSame($password, $this->subject->getPassword());
     }
 
     /**
@@ -127,9 +111,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
      */
     public function getAdminInitiallyReturnsFalse()
     {
-        self::assertFalse(
-            $this->subject->getAdmin()
-        );
+        self::assertFalse($this->subject->getAdmin());
     }
 
     /**
@@ -139,9 +121,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
     {
         $this->subject->setAdmin(true);
 
-        self::assertTrue(
-            $this->subject->getAdmin()
-        );
+        self::assertTrue($this->subject->getAdmin());
     }
 
     /**
