@@ -1,5 +1,6 @@
 {
     "name": "oliverklee/insecurity",
+    "description": "Web application that consists of a plethora of security vulnerabilities held together by some functionality.",
     "authors": [
         {
             "name": "Oliver Klee",
