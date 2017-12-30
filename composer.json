@@ -1,6 +1,7 @@
 {
     "name": "oliverklee/insecurity",
     "description": "Web application that consists of a plethora of security vulnerabilities held together by some functionality.",
+    "license": "GPL-3.0+",
     "authors": [
         {
             "name": "Oliver Klee",
