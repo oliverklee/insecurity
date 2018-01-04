@@ -1,7 +1,11 @@
 # Insecurity
 
 [![Build Status](https://travis-ci.org/oliverklee/insecurity.svg?branch=master)](https://travis-ci.org/oliverklee/insecurity)
-[![Flattr this git repo](https://button.flattr.com/flattr-badge-large.png)](https://flattr.com/submit/auto?fid=45y2xw&url=https%3A%2F%2Fgithub.com%2Foliverklee%2Finsecurity)
+[![Latest Stable Version](https://poser.pugx.org/oliverklee/insecurity/v/stable.svg)](https://packagist.org/packages/oliverklee/insecurity)
+[![Total Downloads](https://poser.pugx.org/oliverklee/insecurity/downloads.svg)](https://packagist.org/packages/oliverklee/insecurity)
+[![Latest Unstable Version](https://poser.pugx.org/oliverklee/insecurity/v/unstable.svg)](https://packagist.org/packages/oliverklee/insecurity)
+[![License](https://poser.pugx.org/oliverklee/insecurity/license.svg)](https://packagist.org/packages/oliverklee/insecurity)
+
 
 ## What is this all about?
 
