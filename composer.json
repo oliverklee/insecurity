@@ -1,15 +1,28 @@
 {
     "name": "oliverklee/insecurity",
-    "description": "Web application that consists of a plethora of security vulnerabilities held together by some functionality.",
-    "license": "GPL-3.0+",
+    "description": "Web application that consists of a plethora of security vulnerabilities held together by some functionality",
+    "type": "project",
+    "keywords": [
+        "security",
+        "example",
+        "exercise"
+    ],
+    "homepage": "https://www.oliverklee.de/workshops/workshops.html",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "Oliver Klee",
-            "email": "typo3-coding@oliverklee.de"
+            "email": "typo3-coding@oliverklee.de",
+            "homepage": "https://www.oliverklee.de/",
+            "role": "developer"
         }
     ],
+    "support": {
+        "source": "https://github.com/oliverklee/insecurity",
+        "issues": "https://github.com/oliverklee/insecurity/issues"
+    },
     "require": {
-        "php": ">=5.5.0"
+        "php": "^5.5.0 || ~7.0.0 || ~7.1.0 || ~7.1.0"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "~2.6",
@@ -18,6 +31,11 @@
     "autoload": {
         "psr-4": {
             "OliverKlee\\Insecurity\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OliverKlee\\Insecurity\\Tests\\": "Tests/"
         }
     }
 }
