@@ -22,7 +22,7 @@
         "issues": "https://github.com/oliverklee/insecurity/issues"
     },
     "require": {
-        "php": "^5.5.0 || ~7.0.0 || ~7.1.0 || ~7.1.0"
+        "php": "~7.0.0 || ~7.1.0 || ~7.2.0"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "~2.6",
