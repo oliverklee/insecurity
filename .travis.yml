@@ -19,9 +19,17 @@ install:
 - composer install
 
 script:
-  # Run PHP lint on all PHP files.
-  - find Classes/ includes/ public/ Tests/ -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
-  # Check the coding style.
-  - vendor/bin/phpcs --standard=Configuration/PhpCodeSniffer/Standards/Insecurity/ Classes/ Tests/
-  # Run the tests.
-  - vendor/bin/phpunit Tests/
+- >
+  echo;
+  echo "Linting all PHP files";
+  find Classes/ includes/ public/ Tests/ -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l;
+
+- >
+  echo;
+  echo "Running the unit tests";
+  vendor/bin/phpunit Tests/Unit/;
+
+- >
+  echo;
+  echo "Running PHP_CodeSniffer";
+  vendor/bin/phpcs --standard=Configuration/PhpCodeSniffer/Standards/Insecurity/ Classes/ Tests/;
