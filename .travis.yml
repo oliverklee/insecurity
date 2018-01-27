@@ -27,14 +27,14 @@ script:
 - >
   echo;
   echo "Linting all PHP files";
-  composer php-lint;
+  composer ci:php:lint;
 
 - >
   echo;
   echo "Running the unit tests";
-  vendor/bin/phpunit Tests/Unit/;
+  composer ci:tests:unit;
 
 - >
   echo;
   echo "Running PHP_CodeSniffer";
-  vendor/bin/phpcs --standard=Configuration/PhpCodeSniffer/Standards/Insecurity/ Classes/ Tests/;
+  composer ci:php:sniff;
