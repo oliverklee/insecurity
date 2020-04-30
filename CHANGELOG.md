@@ -11,6 +11,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 - Composer script for PHP linting
 
 ### Changed
+- Change the code style from PSR-2 to PSR-12 (#48)
 - Simplify the PHP version requirement (#46)
 - Upgrade PHP_CodeSniffer (#45)
 - Use the default path for the PHP_CodeSniffer configuration (#42)

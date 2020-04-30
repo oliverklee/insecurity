@@ -1,4 +1,5 @@
 <?php
+
 namespace OliverKlee\Insecurity\Domain\Repository;
 
 use OliverKlee\Insecurity\Domain\Model\User;

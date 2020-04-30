@@ -1,4 +1,5 @@
 <?php
+
 namespace OliverKlee\Insecurity\Core;
 
 use OliverKlee\Insecurity\Domain\Repository\UserRepository;

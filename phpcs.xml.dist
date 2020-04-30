@@ -4,8 +4,8 @@
         This is the coding standard used for the Insecurity code.
     </description>
 
-    <!--The complete PSR-2 ruleset-->
-    <rule ref="PSR2"/>
+    <!--The complete PSR-12 ruleset-->
+    <rule ref="PSR12"/>
 
     <!-- Arrays -->
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>

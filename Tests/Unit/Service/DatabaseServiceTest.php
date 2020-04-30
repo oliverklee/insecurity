@@ -1,4 +1,5 @@
 <?php
+
 namespace OliverKlee\Insecurity\Tests\Unit\Service;
 
 use OliverKlee\Insecurity\Service\DatabaseService;

@@ -1,4 +1,5 @@
 <?php
+
 namespace OliverKlee\Insecurity\Service;
 
 /**
@@ -11,7 +12,7 @@ class DatabaseService
     /**
      * @var string
      */
-    const CONFIGURATION_PATH = 'Configuration/db.json';
+    private const CONFIGURATION_PATH = 'Configuration/db.json';
 
     /**
      * @var DatabaseService
