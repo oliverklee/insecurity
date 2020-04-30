@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 - Composer script for PHP linting
 
 ### Changed
+- Simplify the PHP version requirement (#46)
 - Upgrade PHP_CodeSniffer (#45)
 - Use the default path for the PHP_CodeSniffer configuration (#42)
 - Change the supported PHP versions to 7.2-7.4 (#39)
