@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 ## x.y.z
 
 ### Added
+- Add a script for PHP style fixing (#43)
 - Composer script for PHP linting
 
 ### Changed
