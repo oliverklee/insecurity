@@ -30,7 +30,7 @@
 </main>
 
 <footer>
-    <script src="js/jquery.min.js?201512261312"></script>
+    <script src="js/jquery-3.5.0.min.js?202004301152"></script>
     <script src="js/bootstrap.min.js?201512261312"></script>
 </footer>
 </body>
