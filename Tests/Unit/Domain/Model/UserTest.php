@@ -3,13 +3,14 @@
 namespace OliverKlee\Insecurity\Tests\Unit\Domain\Model;
 
 use OliverKlee\Insecurity\Domain\Model\User;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test case.
  *
  * @author Oliver Klee <typo3-coding@oliverklee.de>
  */
-class UserTest extends \PHPUnit_Framework_TestCase
+class UserTest extends TestCase
 {
     /**
      * @var User
@@ -21,7 +22,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->subject = new User();
     }

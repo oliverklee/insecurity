@@ -3,20 +3,21 @@
 namespace OliverKlee\Insecurity\Tests\Unit\Service;
 
 use OliverKlee\Insecurity\Service\DatabaseService;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test case.
  *
  * @author Oliver Klee <typo3-coding@oliverklee.de>
  */
-class DatabaseServiceTest extends \PHPUnit_Framework_TestCase
+class DatabaseServiceTest extends TestCase
 {
     /**
      * Cleans up.
      *
      * @return void
      */
-    protected function tearDown()
+    protected function tearDown(): void
     {
         DatabaseService::purgeInstance();
     }

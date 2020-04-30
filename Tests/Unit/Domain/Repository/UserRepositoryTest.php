@@ -3,20 +3,21 @@
 namespace OliverKlee\Insecurity\Tests\Unit\Domain\Repository;
 
 use OliverKlee\Insecurity\Domain\Repository\UserRepository;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test case.
  *
  * @author Oliver Klee <typo3-coding@oliverklee.de>
  */
-class UserRepositoryTest extends \PHPUnit_Framework_TestCase
+class UserRepositoryTest extends TestCase
 {
     /**
      * Cleans up.
      *
      * @return void
      */
-    protected function tearDown()
+    protected function tearDown(): void
     {
         UserRepository::purgeInstance();
     }
