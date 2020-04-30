@@ -40,7 +40,7 @@
     },
     "scripts": {
         "ci:php:lint": "find Classes includes public Tests -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l",
-        "ci:php:sniff": "./vendor/bin/phpcs --standard=Configuration/PhpCodeSniffer/Standards/Insecurity Classes Tests",
+        "ci:php:sniff": "./vendor/bin/phpcs Classes Tests",
         "ci:tests:unit": "./vendor/bin/phpunit Tests/Unit",
         "ci:tests": [
             "@ci:tests:unit"
