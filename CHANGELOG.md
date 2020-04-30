@@ -6,10 +6,10 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 ## x.y.z
 
 ### Added
-
 - Composer script for PHP linting
 
 ### Changed
+- Change the supported PHP versions to 7.2-7.4 (#39)
 
 ### Deprecated
 
