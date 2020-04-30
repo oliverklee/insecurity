@@ -22,6 +22,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 ### Removed
 
 ### Fixed
+- Add the required PHP extensions to the `composer.json` (#49)
 - Upgrade to jQuery 3.5.0 (#44)
 - Always use the Composer-installed dev tools (#41)
 - Fix warnings in the `travis.yml` (#40)
